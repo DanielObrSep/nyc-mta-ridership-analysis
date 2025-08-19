@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: mrt_daily_summary
+    description: "Total daily ridership by service"
+    columns:
+      - name: date
+        tests:
+          - not_null
+      - name: service
+        tests:
+          - not_null
+          - accepted_values:
+              values: [
+                'subway', 'bus', 'lirr', 'metro_north',
+                'access_a_ride', 'bridges_and_tunnels', 'staten_island_railway'
+              ]
+      - name: total_ridership
+        tests:
+          - not_null
+
+  - name: mrt_weekday_patterns
+    description: "Average ridership by weekday and service"
+    columns:
+      - name: weekday
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 6
+      - name: service
+        tests:
+          - not_null
+          - accepted_values:
+              values: [
+                'subway', 'bus', 'lirr', 'metro_north',
+                'access_a_ride', 'bridges_and_tunnels', 'staten_island_railway'
+              ]
+      - name: avg_ridership
+        tests:
+          - not_null
+
+  - name: mrt_service_trends
+    description: "Monthly total ridership by service"
+    columns:
+      - name: month
+        tests:
+          - not_null
+      - name: service
+        tests:
+          - not_null
+          - accepted_values:
+              values: [
+                'subway', 'bus', 'lirr', 'metro_north',
+                'access_a_ride', 'bridges_and_tunnels', 'staten_island_railway'
+              ]
+      - name: total_ridership
+        tests:
+          - not_null
+
+  - name: mrt_anomaly_flags
+    description: "Outliers in total_ridership by service (3σ rule)"
+    columns:
+      - name: date
+        tests:
+          - not_null
+      - name: service
+        tests:
+          - not_null
+          - accepted_values:
+              values: [
+                'subway', 'bus', 'lirr', 'metro_north',
+                'access_a_ride', 'bridges_and_tunnels', 'staten_island_railway'
+              ]
+      - name: total_ridership
+        tests:
+          - not_null
+      - name: is_outlier
+        tests:
+          - not_null

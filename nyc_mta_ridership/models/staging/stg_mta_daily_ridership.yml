@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: stg_mta_daily_ridership
+    description: Staging model with cleaned and typed ridership data
+    columns:
+      - name: date
+        tests:
+          - not_null
+
+      - name: weekday
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 6
+
+      - name: is_weekend
+        tests:
+          - accepted_values:
+              values: [True, False]
+
+      - name: subways_total_estimated_ridership
+        tests:
+          - not_null
+
+      - name: subways_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: buses_total_estimated_ridership
+        tests:
+          - not_null
+
+      - name: buses_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: lirr_total_estimated_ridership
+        tests:
+          - not_null
+
+      - name: lirr_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2.5
+
+      - name: metro_north_total_estimated_ridership
+        tests:
+          - not_null
+
+      - name: metro_north_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: access_a_ride_total_scheduled_trips
+        tests:
+          - not_null
+
+      - name: access_a_ride_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: bridges_and_tunnels_total_traffic
+        tests:
+          - not_null
+
+      - name: bridges_and_tunnels_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: staten_island_railway_total_estimated_ridership
+        tests:
+          - not_null
+
+      - name: staten_island_railway_pct_of_pre_pandemic
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 2
+
+      - name: total_ridership
+        tests:
+          - not_null
+
+      - name: pct_change_vs_2019
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: -2
+              max_value: 3
+
+      - name: outlier
+        tests:
+          - accepted_values:
+              values: [True, False]

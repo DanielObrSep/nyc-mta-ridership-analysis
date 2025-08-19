@@ -1,0 +1,14 @@
+venv/
+.venv/
+
+dbt_mta/target/
+dbt_mta/dbt_packages/
+
+dev.duckdb
+
+.ipynb_checkpoints/
+
+outputs/
+reports/*.pbix
+
+logs/
