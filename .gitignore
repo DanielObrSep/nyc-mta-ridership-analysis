@@ -1,14 +1,22 @@
+# Virtual environments
 venv/
 .venv/
 
-dbt_mta/target/
-dbt_mta/dbt_packages/
+# dbt
+target/
+**/target/
+**/dbt_packages/
+**/logs/
 
-dev.duckdb
+# DuckDB
+*.duckdb
 
+# Jupyter Notebooks
 .ipynb_checkpoints/
 
-outputs/
-reports/*.pbix
+# Python cache
+__pycache__/
 
+# Otros
 logs/
+dev.duckdb
