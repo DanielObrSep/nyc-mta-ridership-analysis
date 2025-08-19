@@ -11,8 +11,8 @@ venv/
 # Carpetas de compilación
 target/
 **/target/
-dbt_mta/target/
-dbt_mta/dbt_packages/
+nyc_mta_ridership/target/
+nyc_mta_ridership/dbt_packages/
 .ipynb_checkpoints/
 
 # Archivos generados
