@@ -1,22 +1,23 @@
-# Virtual environments
+# Entornos
 venv/
 .venv/
 
-# dbt
+# Archivos temporales y binarios
+*.duckdb
+*.pbix
+*.png
+*.pdf
+*.csv
+*.zip
+*.log
+
+# Carpetas de compilación
 target/
 **/target/
-**/dbt_packages/
-**/logs/
-
-# DuckDB
-*.duckdb
-
-# Jupyter Notebooks
+dbt_mta/target/
+dbt_mta/dbt_packages/
 .ipynb_checkpoints/
 
-# Python cache
-__pycache__/
-
-# Otros
+# Archivos generados
+outputs/
 logs/
-dev.duckdb
