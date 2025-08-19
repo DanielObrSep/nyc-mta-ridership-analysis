@@ -4,10 +4,7 @@ venv/
 
 # Archivos temporales y binarios
 *.duckdb
-*.pbix
-*.png
 *.pdf
-*.csv
 *.zip
 *.log
 
@@ -19,5 +16,4 @@ dbt_mta/dbt_packages/
 .ipynb_checkpoints/
 
 # Archivos generados
-outputs/
 logs/
