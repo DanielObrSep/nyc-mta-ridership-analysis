@@ -1,0 +1,24 @@
+name: 'dbt_nyc_mta_ridership'
+version: '1.0.0'
+
+profile: 'dbt_nyc_mta_ridership'
+
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_nyc_mta_ridership:
+    +schema: analytics
+    stg: 
+      +materialized: view
+    mrt:
+     +materialized: table

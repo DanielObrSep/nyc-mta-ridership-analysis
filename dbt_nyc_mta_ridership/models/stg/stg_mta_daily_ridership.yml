@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_mta_daily_ridership
+    schema: analytics
+    columns:
+      - name: date 
+        tests: 
+          - not_null
+      - name: subways_total_estimated_ridership
+        test:
+          - not_null
+      - name: subways_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: buses_total_estimated_ridership
+        test:
+          - not_null
+      - name: buses_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: lirr_total_estimated_ridership
+        test:
+          - not_null
+      - name: lirr_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: metro_north_total_estimated_ridership
+        test:
+          - not_null
+      - name: metro_north_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: access_a_ride_total_scheduled_trips
+        test:
+          - not_null
+      - name: access_a_ride_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: bridges_and_tunnels_total_traffic
+        test:
+          - not_null
+      - name: bridges_and_tunnels_pct_of_pre_pandemic
+        test:
+          - not_null
+      - name: staten_island_railway_total_estimated_ridership
+        test:
+          - not_null
+      - name: staten_island_railway_pct_of_pre_pandemic
+        test:
+          - not_null
+
