@@ -94,7 +94,7 @@ def clean_mta_daily(df: pd.DataFrame) -> pd.DataFrame:
         out[columns_float]
         .apply(pd.to_numeric, errors="coerce")
         .mask(lambda x: x == 0)
-        .astype("Float64")
+        .astype("Int64")
     )
 
     out = out[out[columns_float + columns_int + ["date"]].notna().all(axis=1)]
@@ -114,7 +114,7 @@ def save_duckdb(
 ) -> str:
     if duckdb is None:
         info("Duckdb no available, omit duckdb")
-        return "Duckdb no availables"
+        return "Duckdb no available"
 
     if table is None:
         table = f"{layer}_data"
@@ -125,10 +125,10 @@ def save_duckdb(
     with duckdb.connect(str(db_path)) as con:
         con.register("df_clean", df)
         if mode == "replace":
-            con.execute(f"Create or Replace {table} as Select * From df_clean")
+            con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM df_clean")
         elif mode == "append":
             con.execute(
-                f"Create a table if not exist {table} as Select * From df_clean where 1=0"
+                f"CREATE TABLE IF NOT EXISTS {table} AS SELECT * FROM df_clean WHERE 1=0"
             )
             con.execute(f"Insert into {table} Select * From df_clean")
         else:

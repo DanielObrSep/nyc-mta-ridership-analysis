@@ -1,0 +1,13 @@
+version: 2
+
+seeds:
+  - name: clean_mta_daily_ridership
+    config:
+      column_types:
+        subways_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        buses_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        lirr_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        metro_north_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        access_a_ride_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        bridges_and_tunnels_%_of_comparable_pre_pandemic_day: decimal(10,4)
+        staten_island_railway_%_of_comparable_pre_pandemic_day: decimal(10,4)

@@ -3,81 +3,96 @@ version: 2
 models:
   - name: mrt_kpi
     columns:
-      - name: total_subway_ridership
+      - name: sum_subways_total_estimated_ridership
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: buses_total_estimated_ridership
+
+      - name: sum_buses_total_estimated_ridership
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: lirr_total_estimated_ridership
+
+      - name: sum_lirr_total_estimated_ridership
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: metro_north_total_estimated_ridership
+
+      - name: sum_metro_north_total_estimated_ridership
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: access_a_ride_total_scheduled_trips
+
+      - name: sum_access_a_ride_total_scheduled_trips
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: bridges_and_tunnels_total_traffic
+
+      - name: sum_bridges_and_tunnels_total_traffic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
-      - name: staten_island_railway_total_estimated_ridership
+
+      - name: sum_staten_island_railway_total_estimated_ridership
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: sum_total_rides
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_subways_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_buses_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_lirr_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_metro_north_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_access_a_ride_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_bridges_and_tunnels_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_staten_island_railway_pct_of_pre_pandemic
         tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: ">= 0"
+
       - name: avg_total_pct_of_pre_pandemic
         tests:
           - not_null
