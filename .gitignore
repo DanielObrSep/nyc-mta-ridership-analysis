@@ -1,19 +1,19 @@
-# Entornos
+# venv y cachés de Python
 venv/
 .venv/
+__pycache__/
+*.pyc
 
-# Archivos temporales y binarios
+# Artefactos de dbt
+dbt_nyc_mta_ridership/target/
+dbt_nyc_mta_ridership/logs/
+dbt_nyc_mta_ridership/dbt_packages/
+dbt_nyc_mta_ridership/seeds/clean_*.csv
+
+# DuckDB
 *.duckdb
-*.pdf
-*.zip
-*.log
+*.duckdb.wal
 
-# Carpetas de compilación
-target/
-**/target/
-nyc_mta_ridership/target/
-nyc_mta_ridership/dbt_packages/
-.ipynb_checkpoints/
-
-# Archivos generados
+# Logs
 logs/
+*.log
