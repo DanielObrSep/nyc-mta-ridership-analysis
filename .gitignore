@@ -8,6 +8,7 @@ __pycache__/
 dbt_nyc_mta_ridership/target/
 dbt_nyc_mta_ridership/logs/
 dbt_nyc_mta_ridership/dbt_packages/
+dbt_nyc_mta_ridership\dbt_packages/
 dbt_nyc_mta_ridership/seeds/clean_*.csv
 
 # DuckDB
