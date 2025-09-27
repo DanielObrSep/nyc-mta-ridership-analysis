@@ -1,7 +1,7 @@
 # venv y cachés de Python
 venv/
 .venv/
-__pycache__/
+scr/__pycache__
 *.pyc
 
 # Artefactos de dbt
