@@ -5,3 +5,6 @@ pandas~=2.3
 numpy~=2.3
 openpyxl~=3.1
 matplotlib<4
+ipykernel~=6.29.5
+notebook~=7.4.3
+
